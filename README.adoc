@@ -28,10 +28,10 @@ and respond with a link:/understanding/JSON[JSON] representation of a greeting:
 Hello World!
 ----
 
-You can call URL's of emmployee service like below.
+You can call URL's of employee service like below. Which will return all employees.
 
 ----
-http://localhost:8080/rest/emp/
+GET http://localhost:8080/rest/emp/
 ----
 
 
@@ -109,6 +109,89 @@ The response:
   }
 ]
 ----
+
+You can get a resource with its Id as below.
+
+----
+GET http://localhost:8080/rest/emp/1
+----
+
+
+The response:
+
+[source,json]
+----
+{
+  "id": 1,
+  "name": "Sachin Tendulkar",
+  "designation": "Batsman",
+  "salary": 100000
+}
+----
+
+Similary you can delete a resource with HTTP DELETE method, for deleting you need an Id of the resource.
+
+----
+DELETE http://localhost:8080/rest/emp/1
+----
+
+
+The response will be the id of the deleted resource:
+
+[source,json]
+----
+1
+----
+
+If you want add a resource you should use HTTP PUT method as below. You should not send id in the URL and you should supply the data/object in the json format as below
+
+----
+PUT http://localhost:8080/rest/emp/
+
+{
+  "id": 1,
+  "name": "Sachin Tendulkar",
+  "designation": "Batsman",
+  "salary": 100000
+}
+----
+
+
+The response will be the id of the created resource:
+
+[source,json]
+----
+1
+----
+
+
+If you want update a resource you should use HTTP POST method as below. You should send id in the URL and you should supply the data/object in the json format as below
+
+----
+POST http://localhost:8080/rest/emp/4
+
+{
+  "id": 4,
+  "name": "Sachin Tendulkar",
+  "designation": "Batsman",
+  "salary": 100000
+}
+----
+
+
+The response will be the created resource:
+
+[source,json]
+----
+{
+  "id": 4,
+  "name": "Sachin Tendulkar",
+  "designation": "Batsman",
+  "salary": 100000
+}
+----
+
+
 == What you'll need
 
 :java_version: 1.8
