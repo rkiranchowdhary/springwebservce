@@ -171,7 +171,9 @@ If you want update a resource you should use HTTP POST method as below. You shou
 
 ----
 POST http://localhost:8080/rest/emp/4
-
+----
+[source, json]
+----
 {
   "id": 4,
   "name": "Sachin Tendulkar",
