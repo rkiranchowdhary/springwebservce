@@ -18,30 +18,97 @@ This guide walks you through the process of creating a "hello world" link:/under
 You'll build a service that will accept HTTP GET requests at:
 
 ----
-http://localhost:8080/greeting
+http://localhost:8080/
 ----
 
 and respond with a link:/understanding/JSON[JSON] representation of a greeting:
 
 [source,json]
 ----
-{"id":1,"content":"Hello, World!"}
+Hello World!
 ----
 
-You can customize the greeting with an optional `name` parameter in the query string:
+You can call URL's of emmployee service like below.
 
 ----
-http://localhost:8080/greeting?name=User
+http://localhost:8080/rest/emp/
 ----
 
-The `name` parameter value overrides the default value of "World" and is reflected in the response:
+
+The response:
 
 [source,json]
 ----
-{"id":1,"content":"Hello, User!"}
+
+[
+  {
+    "id": 1,
+    "name": "Sachin Tendulkar",
+    "designation": "Batsman",
+    "salary": 100000
+  },
+  {
+    "id": 2,
+    "name": "Mahendra Singh Dhoni",
+    "designation": "Batsman / W & C",
+    "salary": 80000
+  },
+  {
+    "id": 3,
+    "name": "Virat Kohli",
+    "designation": "Vice Captain",
+    "salary": 70000
+  },
+  {
+    "id": 4,
+    "name": "Yuvraj Singh",
+    "designation": "Batsman",
+    "salary": 60000
+  },
+  {
+    "id": 5,
+    "name": "R Ashwin",
+    "designation": "Offbreak bowler",
+    "salary": 60000
+  },
+  {
+    "id": 6,
+    "name": "Virendra Sehwagh",
+    "designation": "Batsman",
+    "salary": 50000
+  },
+  {
+    "id": 7,
+    "name": "Ajay Kumar (Jadeja)",
+    "designation": "Batsman",
+    "salary": 60000
+  },
+  {
+    "id": 8,
+    "name": "Anjikya Rahane",
+    "designation": "Batsman",
+    "salary": 50000
+  },
+  {
+    "id": 9,
+    "name": "Bhuvaneshwar Kumar",
+    "designation": "Medium Fast Bowler",
+    "salary": 50000
+  },
+  {
+    "id": 10,
+    "name": "Mohammed Shami",
+    "designation": "Medium Fast Bowler",
+    "salary": 40000
+  },
+  {
+    "id": 11,
+    "name": "Hardik Pandya",
+    "designation": "Medium Fast Bowler",
+    "salary": 30000
+  }
+]
 ----
-
-
 == What you'll need
 
 :java_version: 1.8
@@ -65,14 +132,11 @@ Now that you've set up the project and build system, you can create your web ser
 
 Begin the process by thinking about service interactions.
 
-The service will handle `GET` requests for `/greeting`, optionally with a `name` parameter in the query string. The `GET` request should return a `200 OK` response with JSON in the body that represents a greeting. It should look something like this:
+The service will handle `GET` requests for `/hello`. The `GET` request should return a `200 OK` response with JSON in the body that represents a greeting. It should look something like this:
 
 [source,json]
 ----
-{
-    "id": 1,
-    "content": "Hello, World!"
-}
+Hello World!
 ----
 
 The `id` field is a unique identifier for the greeting, and `content` is the textual representation of the greeting.
