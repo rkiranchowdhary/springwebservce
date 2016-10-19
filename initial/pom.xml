@@ -28,15 +28,22 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+           <groupId>com.h2database</groupId>
+           <artifactId>h2</artifactId>
+           <scope>runtime</scope>
+       </dependency>
+
     </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
+        <dbh2.version>1.4.187</dbh2.version>
     </properties>
 
 
     <build>
-      <finalName>SpringRest</finalName>  
+      <finalName>SpringRest</finalName>
 
         <plugins>
             <plugin>

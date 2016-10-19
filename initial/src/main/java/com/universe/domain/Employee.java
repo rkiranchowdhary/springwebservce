@@ -1,7 +1,7 @@
 package com.universe.domain;
 
 public class Employee {
-  private final int id;
+  private int id;
   private String name;
   private String designation;
   private Double salary;
@@ -14,7 +14,6 @@ public class Employee {
   }
 
   public Employee(){
-      this.id=1;
   }
 
   public int getId(){
@@ -31,6 +30,10 @@ public class Employee {
 
   public Double getSalary(){
     return this.salary;
+  }
+
+  public void setId(int id){
+    this.id = id;
   }
 
   public void setName(String name){
